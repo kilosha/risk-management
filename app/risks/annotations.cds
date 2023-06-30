@@ -15,7 +15,7 @@ annotate RiskService.Risks with @(UI: {
             Value: descr
         }
     },
-    SelectionFields: [prio],
+    SelectionFields: [prio, bp_BusinessPartner],
     Identification : [{Value: title}],
     // Define the table columns
     LineItem       : [

@@ -34,24 +34,18 @@ module.exports = cds.service.impl(async function () {
   this.on("READ", BusinessPartners, async (req) => {
     // The API Sandbox returns alot of business partners with empty names.
     // We don't want them in our application
-    
-      // return await BPsrv.transaction(req).send({
-      //   query: { SELECT: {
-      //     from: { ref: [ 'RiskService.BusinessPartners' ] },
-      //     columns: [ { ref: [ 'BusinessPartner' ] }, { ref: [ 'FirstName' ] }, { ref: [ 'LastName' ] } ],
-      //     //count: true,
-      //     limit: { rows: { val: 58 }, offset: { val: 0 } },
-      //     orderBy: [ { ref: [ 'LastName' ], sort: 'asc' }, { ref: [ 'BusinessPartner' ], sort: 'asc' } ],
-      //     where: [ { ref: [ 'LastName' ] }, '!=', { val: '' }, 'and', { ref: [ 'FirstName' ] }, '!=', { val: '' } ]
-      //   }},
-      //   headers: {
-      //     apikey: process.env.apikey,
-      //   },
-      // });
 
       req.query.where("LastName <> '' and FirstName <> '' ");
 
       delete req.query.SELECT.count;
+
+      if (req.query.SELECT.search) {
+        req.query.where(`LastName = '${req.query.SELECT.search[0].val}' or FirstName = '${req.query.SELECT.search[0].val}'`);
+        //req.query.where(`LastName LIKE '%${req.query.SELECT.search[0].val}%' or FirstName LIKE '%${req.query.SELECT.search[0].val}%'`);
+        delete req.query.SELECT.search;
+      }
+      
+      console.log(req.query)
 
       return await BPsrv.transaction(req).send({
         query: req.query,
@@ -82,7 +76,7 @@ module.exports = cds.service.impl(async function () {
     req.query.SELECT.columns.splice(expandIndex, 1);
     if (
       !req.query.SELECT.columns.find((column) =>
-        column.ref.find((ref) => ref == "bp_BusinessPartner")
+        column.ref?.find((ref) => ref == "bp_BusinessPartner")
       )
     ) {
       req.query.SELECT.columns.push({ ref: ["bp_BusinessPartner"] });
