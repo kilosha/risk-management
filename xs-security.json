@@ -1,0 +1,10 @@
+{
+  "xsappname": "risk-management",
+  "tenant-mode": "dedicated",
+  "oauth2-configuration": {
+    "redirect-uris": ["https://4796c6eftrial-maryia-bpoljva1-dev-risk-management-approuter.cfapps.eu10-004.hana.ondemand.com/login/callback"]
+  },
+  "scopes": [],
+  "attributes": [],
+  "role-templates": []
+}
