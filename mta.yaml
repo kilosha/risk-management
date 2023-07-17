@@ -24,6 +24,7 @@ modules:
     requires:
       - name: risk-management-db
       - name: risk-management-auth
+      - name: my-cloud-destinations
 
   - name: risk-management-db-deployer
     type: hdb
@@ -66,3 +67,7 @@ resources:
           # <-- add this
           redirect-uris:
             - https://4796c6eftrial-maryia-bpoljva1-dev-risk-management.cfapps.us10-001.hana.ondemand.com/login/callback
+  - name: my-cloud-destinations
+    type: org.cloudfoundry.existing-service
+    parameters:
+      service-name: my-cloud-destinations
