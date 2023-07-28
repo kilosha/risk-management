@@ -66,7 +66,7 @@ resources:
         oauth2-configuration:
           # <-- add this
           redirect-uris:
-            - https://4796c6eftrial-maryia-bpoljva1-dev-risk-management.cfapps.us10-001.hana.ondemand.com/login/callback
+            - https://9730a22dtrial-dev-risk-management.cfapps.us10-001.hana.ondemand.com/login/callback
   - name: my-cloud-destinations
     type: org.cloudfoundry.existing-service
     parameters:
