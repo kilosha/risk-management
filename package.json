@@ -14,7 +14,10 @@
     "@sap/cds": "^6",
     "@sap/cds-dk": "^7.0.1",
     "@sap/cds-odata-v2-adapter-proxy": "^1.9.21",
-    "express": "^4"
+    "express": "^4",
+    "hdb": "^0.19.0",
+    "@sap/xssec": "^3",
+    "passport": "^0"
   },
   "devDependencies": {
     "@sap/ux-specification": "^1.108.7",
@@ -23,7 +26,9 @@
   "scripts": {
     "start": "cds run",
     "watch": "cds watch",
-    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false"
+    "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
+    "build": "mbt build -t gen --mtar mta.tar",
+    "deploy": "cf deploy gen/mta.tar"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
@@ -58,7 +63,12 @@
         "credentials": {
           "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
         }
-      }
+      },
+      "[production]": {
+        "db": "hana-cloud",
+        "auth": "xsuaa"
+      },
+      "db": "sql"
     }
   },
   "sapux": [
