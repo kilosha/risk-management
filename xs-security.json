@@ -1,5 +1,5 @@
 {
-  "xsappname": "risk-management-${org}-${space}",
+  "xsappname": "risk-management",
   "tenant-mode": "dedicated",
   "scopes": [
     {
