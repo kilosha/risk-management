@@ -25,6 +25,7 @@ modules:
       - name: risk-management-db
       - name: risk-management-auth
       - name: my-cloud-destinations
+      - name: my-generated-destination
 
   - name: risk-management-db-deployer
     type: hdb
@@ -81,3 +82,5 @@ resources:
     type: org.cloudfoundry.existing-service
     parameters:
       service-name: my-cloud-destinations
+  - name: my-generated-destination
+    type: org.cloudfoundry.managed-service

@@ -45,3 +45,15 @@ Copyright (c) 2022 SAP SE or an SAP affiliate company. All rights reserved. This
 
 API_BUSINESS_PARTNER.edmx скачивается с бизнесхаба, а csn файл создаётся командой 
 cds import ./srv/external/API_BUSINESS_PARTNER.edmx  --as csn
+
+
+
+
+"build": "mbt build -t gen --mtar mta.tar",
+"build:test": "mbt build -e=test.mtaext -t gen --mtar mta.tar"
+
+
+-t => optional parameter folder name for generated archive
+--mtar => optional parameter archive name
+
+-e=test.mtaext => The path or paths to multitarget application extension files (.mtaext). Several extension files separated by commas can be passed with a single flag, or each extension file can be specified with its own flag.

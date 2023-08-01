@@ -28,6 +28,7 @@
     "watch": "cds watch --port '5005'",
     "watch-risks": "cds watch --open risks/webapp/index.html?sap-ui-xx-viewCache=false",
     "build": "mbt build -t gen --mtar mta.tar",
+    "build:test": "mbt build -e=test.mtaext -t gen --mtar mta.tar",
     "deploy": "cf deploy gen/mta.tar"
   },
   "eslintConfig": {
