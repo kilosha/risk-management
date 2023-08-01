@@ -1,5 +1,6 @@
 {
   "welcomeFile": "/app/risks/webapp/index.html",
+  "authenticationMethod": "none",
   "routes": [
     {
       "source": "^/app/(.*)$",
