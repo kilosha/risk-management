@@ -5,7 +5,6 @@ extends: risk-management
 resources:
   - name: my-generated-destination
     parameters:
-      service-name: my-generated-service-name
       config:
         HTML5Runtime_enabled: true
         init_data:
@@ -18,5 +17,3 @@ resources:
               URL: https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER
             existing_destinations_policy: update
         version: 1.0.0
-      service: destination
-      service-plan: lite

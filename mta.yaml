@@ -84,3 +84,7 @@ resources:
       service-name: my-cloud-destinations
   - name: my-generated-destination
     type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
+      service-name: my-generated-service-name
