@@ -57,3 +57,27 @@ cds import ./srv/external/API_BUSINESS_PARTNER.edmx  --as csn
 --mtar => optional parameter archive name
 
 -e=test.mtaext => The path or paths to multitarget application extension files (.mtaext). Several extension files separated by commas can be passed with a single flag, or each extension file can be specified with its own flag.
+
+
+Launch.json config for hybrid testing:
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Risks",
+            "request": "launch",
+            "type": "node",
+            "cwd": "${workspaceFolder}/",
+            "runtimeExecutable": "npm",
+            "args": [
+                "run-script",
+                "hybrid-test"
+            ],
+            "console": "internalConsole",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": [
+                "<node_internals>/**"
+            ]
+        }
+    ]
+}
