@@ -1,6 +1,9 @@
 {
   "welcomeFile": "/app/risks/webapp/index.html",
-  "authenticationMethod": "none",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/my/logout"
+  },
   "routes": [
     {
       "source": "^/app/(.*)$",
@@ -10,6 +13,12 @@
     {
       "source": "^/service/(.*)$",
       "destination": "srv-api"
+    },
+    {
+      "source": "^/northwind/(.*)$",
+      "destination": "Northwind",
+      "target": "$1",
+      "scope": "$XSAPPNAME.RiskManager"
     }
   ]
 }
