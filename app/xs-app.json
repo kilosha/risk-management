@@ -13,12 +13,6 @@
     {
       "source": "^/service/(.*)$",
       "destination": "srv-api"
-    },
-    {
-      "source": "^/northwind/(.*)$",
-      "destination": "Northwind",
-      "target": "$1",
-      "scope": "$XSAPPNAME.RiskManager"
     }
   ]
 }

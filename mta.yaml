@@ -70,6 +70,7 @@ resources:
           redirect-uris:
           - http*://*.cfapps.us10-001.hana.ondemand.com/**
           - http*://*.us10.trial.applicationstudio.cloud.sap/login/callback
+          - https://*.authentication.us10.hana.ondemand.com/**
         role-collections:
         - name: 'RiskManager-${space}'
           description: Manage Risks
