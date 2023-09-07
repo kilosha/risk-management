@@ -1,6 +1,6 @@
 # Welcome to the Learning Journey "Building side-by-side extensions on SAP BTP"
 [![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/extension-suite-learning-journey)](https://api.reuse.software/info/github.com/SAP-samples/extension-suite-learning-journey)
-
+q
 Welcome to this repository for the learning journey "Building side-by-side extensions on SAP BTP" published on [SAP Learning](https://learning.sap.com/learning-journey/building-side-by-side-extensions-on-sap-btp). We provide a starting template for the exercises as well as a dedicated branch for each exercise with its final solution.
 
 ## Requirements
