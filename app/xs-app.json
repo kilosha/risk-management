@@ -6,6 +6,13 @@
   },
   "routes": [
     {
+      "source": "^/northwind/(.*)$",
+      "target": "$1",
+      "authenticationType": "none",
+      "destination": "Northwind",
+      "csrfProtection": false
+    },
+    {
       "source": "^/app/(.*)$",
       "localDir": "./",
       "target": "$1"
